@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacking Order Example</title>
+    <style>
+        .parent {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            border: 2px solid blue;
+            z-index: 0; /* Creates a stacking context */
+        }
+
+        .child {
+            position: absolute; /* Positioned relative to the parent */
+            top: 50px;
+            left: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 2px solid orange;
+            z-index: 2; /* Stacks on top of the parent */
+        }
+
+        .sibling {
+            position: relative; /* This element is outside the parent stacking context */
+            width: 250px;
+            height: 250px;
+            background-color: pink;
+            border: 2px solid red;
+            z-index: 0; /* Default stacking order */
+            margin-top: -200px; /* Move this element up to overlap with the parent */
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        Parent Div
+        <div class="child">
+            Child Div
+        </div>
+    </div>
+
+    <div class="sibling">
+        Sibling Div
+    </div>
+</body>
+</html> -->
