@@ -1,29 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
-import foodItems from "../assets/data/gofood.food_items.js";
-
-function Category() {
-    const [categories, setCategories] = useState([]);
+import data from "../assets/data/gofood.restaurant.js";
+import Card from './Card.jsx';
+function TopRest() {
+    const [rest, setRest] = useState([]);
     const [slide, setSlide] = useState(0);
-    const fetchCategories = async () => {
-        //  const response=await fetch("http://localhost:5000/categories");
-        //  const data=response.json();
-
-
-        console.log(foodItems, "fppd items");
-
-        setCategories(foodItems);
-    }
 
     useEffect(() => {
-        fetchCategories();
-    }, []);
+        setRest(data);
+    })
 
     const prevSlide = () => {
         console.log(slide, "hehgccec");
-        console.log(categories.length,"length");
-        if (categories.length - 8 === (-slide)) {
+        console.log(categories.length, "length");
+        if (rest.length - 8 === (-slide)) {
             return false;
         }
         setSlide(slide - 2);
@@ -49,10 +40,14 @@ function Category() {
                 </div>
 
 
+          <div className='flex'>
+            <Card/>
+          </div>
+
                 {/* tn flex , if wrap not given then items shrink to fit in conatiner wodth irrespect of their individual width so if we want them to appear in their actual width then either give wrap (then they comes in next line , but if want to keep in single line then make shrink-0 by only some elemnt comes in conatiner and other got over-flow*/}
-                <div className='flex  w-full border border-red-600 shrink-0 overflow-hidden'>
+                {/* <div className='flex  w-full border border-red-600 shrink-0 overflow-hidden'>
                     {
-                        categories.map((item, index) => {
+                        rest.map((item, index) => {
                             return (
                                 // <div key={index} className='shrink-0' style={{transform: `translateX(-40px)`}}>
                                 <div key={index} className='shrink-0' style={{ transform: `translateX(${slide * 150}px)` }} >
@@ -62,7 +57,10 @@ function Category() {
                             )
                         })
                     }
-                </div>
+                </div> */}
+
+
+
 
                 <hr className='my-8 b-t-10'></hr>
             </div>
@@ -73,4 +71,5 @@ function Category() {
     )
 }
 
-export default Category
+
+export default TopRest;
