@@ -1,15 +1,38 @@
 import React from 'react'
-
-function Card() {
+import { FcRating } from "react-icons/fc";
+import Star from './Star';
+function Card(props) {
+    console.log(props, "scvhcjv")
     return (
-        <div className='w-[250px]'>
-            <div className="object-cover rounded-[15px] overflow-hidden relative">
-                <img src="https://media.istockphoto.com/photos/paneer-tikka-at-skewers-in-black-bowl-at-dark-slate-background-paneer-picture-id1186759790?k=20&m=1186759790&s=612x612&w=0&h=e9MlX_7cZtq9_-ORGLPNU27VNP6SvDz7s-iwTxrf7wU=" alt="" />
+        <div className={`${props.width} shrink-0 `}>
+            <div className=" group overflow-hidden rounded-[15px] h-[182px] relative">
+                <img className='group-hover:scale-110 duration-300 object-cover h-full w-full' src={props.img} alt="" />
 
-                <div className='image-overlay absolute top-0 h-full w-full '></div>
+                <div className='image-overlay absolute top-0 h-full w-full flex items-end text-[16px] md:font-bold text-white md:text-[25px] p-1 tracking-tighter'>
+                    {/*tracking-tighter   : this property uses to reduce letter spacing */}
+                    {props.offer}
+                </div>
             </div>
+
+            <div className=''>
+                {props.title}
+            </div>
+            <div className='flex gap-2' flex>
+                <div className='flex items-center'>
+                    <Star />
+                    {props.rating}
+                </div>
+                <span>
+                    {props.minTime}-{props.maxTime}
+                </span>
+
+            </div>
+
+
+
         </div>
     )
 }
 
 export default Card
+

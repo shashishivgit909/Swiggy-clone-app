@@ -39,7 +39,7 @@ function Category() {
 
     return (
         <>
-            <div className='max-w-[1200px] mx-auto'>
+            <div className='md:max-w-[1200px] mx-auto'>
                 <div className='flex justify-between my-3'>
                     <div className='font-bold text-xl'>What's on your mind ?</div>
                     <div className='flex gap-3'>

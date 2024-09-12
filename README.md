@@ -56,3 +56,17 @@ e.stopPropagation(): This method stops the event from bubbling up the DOM tree, 
 e.preventDefault(): This method prevents the default action that belongs to the event from happening. For example, it can prevent a link from navigating, a form from submitting, or a checkbox from being checked. It doesn't stop the event from bubbling up the DOM tree.
 
 In your scenario, you want to prevent the click event from propagating to the parent element, so e.stopPropagation() is the appropriate method to use. e.prevent
+
+
+## group hover:  
+=> The group class in Tailwind CSS is used in combination with group-hover or group-focus to apply styles to child elements based on the state of a parent element. It allows you to trigger hover or focus states on child elements when the parent element is hovered or focused.
+
+Use Case:
+When you want to apply a hover effect to one element but base that effect on the hover state of a parent element, you use the group class on the parent and group-hover on the child.
+
+EG:code: 
+
+<div className='group overflow-hidden rounded-[15px] h-[182px] relative'>
+  {/* This image scales when its parent (the div with class 'group') is hovered */}
+  <img className='group-hover:scale-110 transition-transform duration-300 object-cover h-full w-full' src={props.img} alt="" />
+</div>

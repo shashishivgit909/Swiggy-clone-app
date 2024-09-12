@@ -55,7 +55,8 @@ function Header() {
 
         </div>
       </div>
-      <header className="p-3 shadow-xl">
+       
+      <header className="p-3 shadow-xl sticky top-0 z-[9999] bg-white"> 
         <div className="max-w-[1200px] m-auto border flex items-center">
           <div className='w-[100px] ' >
             <img src="/images/logo.jpeg" alt="logo" />
@@ -64,7 +65,7 @@ function Header() {
           {/* fontSize={25}   this makes inline css to this component which is mainly used in icon but cs applied by class names are external css . We can give size by tailwind class also for size here . */}
           <RxCaretDown onClick={showSideMenu} fontSize={25} className="text-[#ff5200] cursor-pointer" />
 
-          <nav className="flex list-none gap-10 ml-auto font-semibold">
+          <nav className="hidden md:flex list-none gap-10 ml-auto font-semibold">
             {
               links.map((link, index) => {
                 return (< li key={index} className="flex items-center gap-2 hover:text-[#ff5200] cursor-pointer">
